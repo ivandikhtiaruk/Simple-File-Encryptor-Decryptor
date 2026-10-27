@@ -1,18 +1,13 @@
 [package]
 name = "simple_file_encryptor"
-version = "1.0.0"
+version = "0.1.0"
 edition = "2021"
-authors = ["Student"]
-description = "Simple File Encryptor / Decryptor in Rust (AES-256-GCM, PBKDF2, Audit Logger)"
 
 [dependencies]
-# Криптографія
 aes-gcm = "0.10"
-pbkdf2 = { version = "0.12", default-features = false }
+pbkdf2 = { version = "0.12", features = ["hmac"] }
 sha2 = "0.10"
 rand = "0.8"
 zeroize = { version = "1.7", features = ["zeroize_derive"] }
-
-# CLI та взаємодія з терміналом
 clap = { version = "4.4", features = ["derive"] }
 rpassword = "7.3"
