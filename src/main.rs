@@ -57,7 +57,7 @@ fn get_password(cli_pwd: Option<String>) -> Result<String, Box<dyn std::error::E
     match cli_pwd {
         Some(p) => Ok(p),
         None => {
-            let pass = rpassword::prompt_password("Введіть пароль: ")?;
+          let pass = rpassword::prompt_password("Enter password: ")?;
             if pass.trim().is_empty() {
                 return Err("Пароль не може бути порожнім.".into());
             }
